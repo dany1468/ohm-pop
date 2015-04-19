@@ -1,7 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require "ohm"
-require 'ohm/set'
+require 'ohm'
 require 'ohm/pop'
 
 RSpec.configure do |config|

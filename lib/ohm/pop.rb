@@ -1,7 +1,7 @@
-require "ohm/pop/version"
+require 'ohm/pop/version'
+require_relative 'set'
 
 module Ohm
   module Pop
-    # Your code goes here...
   end
 end
