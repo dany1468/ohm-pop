@@ -11,6 +11,14 @@ module Ohm
         raise ArgumentError, 'limit options is not supported. always limit: [0, 1]'
       end
 
+      if options.has_key?(:get)
+        raise ArgumentError, 'get options is not supported.'
+      end
+
+      if options.has_key?(:store)
+        raise ArgumentError, 'store options is not supported.'
+      end
+
       options.merge!(limit: [0, 1])
 
       ids = []
@@ -24,7 +32,9 @@ module Ohm
         0,
         ops.to_msgpack,
         ids.to_msgpack,
-        @model.name.to_msgpack
+        @model.name.to_msgpack,
+        @model.uniques.to_msgpack,
+        @model.tracked.to_msgpack
       )
 
       return nil unless response
