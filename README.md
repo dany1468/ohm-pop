@@ -41,8 +41,14 @@ Item.create(name: 'item1', priority: 1)
 Item.create(name: 'item2', priority: 2)
 Item.create(name: 'item3', priority: 3)
 
+Item.all.size
+# => 3
+
 Item.all.pop(by: :priority)
 # => #<Item:xxxx @attributes={:name=>"item1", :priority=>"1"}, @_memo={}, @id="1">
+
+Item.all.size
+# => 2
 ```
 
 ## Contributing
