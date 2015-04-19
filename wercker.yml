@@ -1,8 +1,11 @@
-box: wercker/ruby
+box: wercker/rvm
 service:
     - wercker/redis
 build:
     steps:
+        - rvm-use:
+            version: 2.2.0
+
         - bundle-install
         - script:
             name: Run rspec
