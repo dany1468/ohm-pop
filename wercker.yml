@@ -1,5 +1,5 @@
 box: wercker/rvm
-service:
+services:
     - wercker/redis
 build:
     steps:
