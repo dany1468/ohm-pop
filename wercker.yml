@@ -1,0 +1,9 @@
+box: wercker/ruby
+service:
+    - wercker/redis
+build:
+    steps:
+        - bundle-install
+        - script:
+            name: Run rspec
+            code: bundle exec rspec
