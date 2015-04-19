@@ -5,9 +5,7 @@ status")](https://app.wercker.com/project/bykey/2a15e93654b2ff7d6ee34782791addeb
 
 # Ohm::Pop
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ohm/pop`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A pop implementation for Ohm
 
 ## Installation
 
@@ -27,13 +25,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ohm'
+require 'ohm/pop'
 
-## Development
+class Item < Ohm::Model
+  attribute :name
+  attribute :priority
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+  index :name
+  index :priority
+end
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Item.create(name: 'item1', priority: 1)
+Item.create(name: 'item2', priority: 2)
+Item.create(name: 'item3', priority: 3)
+
+Item.all.pop(by: :priority)
+# => #<Item:xxxx @attributes={:name=>"item1", :priority=>"1"}, @_memo={}, @id="1">
+```
 
 ## Contributing
 
