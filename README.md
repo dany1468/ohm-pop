@@ -1,3 +1,8 @@
+[![wercker
+status](https://app.wercker.com/status/2a15e93654b2ff7d6ee34782791addeb/m/master
+"wercker
+status")](https://app.wercker.com/project/bykey/2a15e93654b2ff7d6ee34782791addeb)
+
 # Ohm::Pop
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ohm/pop`. To experiment with that code, run `bin/console` for an interactive prompt.
